@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block start %}
+
+<h2>Expense Tracker</h2>
+<div class="container">
+    <div>
+    <h4>Your Balance</h4>
+<h1 id="balance">${{ profile.balance }}</h1>
+</div>
+   
+    <div class="inc-exp-container">
+        <div class="top-box">
+        <div>
+            <h4>Income</h4>
+            <p id="money-plus" class="money.plus"> +${{ profile.income }}</p>
+        </div>
+
+        <div>
+            <h4>Expense</h4>
+            <p id="money-minus" class="money.minus"> -${{ profile.expenses }}</p>
+        </div>
+
+    </div>
+</div>
+
+        <h3>History</h3>
+        <ul id="list" class="list">
+            <li class="minus">
+                Cash <span> $400</span> <button class="delete-btn">x</button>
+
+            </li>
+        </ul>
+
+        <h3>Add new transaction</h3>
+        <form action="" id="form">
+            <div class="form-control">
+                <label for="text">Text</label>
+                <input type="text" id="text" name="text" placeholder="Enter text ...."/>
+            </div>
+
+            <div class="form-control">
+                <label for="amount">
+                    Amount <br>
+                    (negative -expense, positive -income)
+                </label>
+
+                <input type="number" name="amount" id="amount" placeholder="Enter amount ....."/>
+            </div>
+
+
+            <div class="form-control">
+                <label for="text">Text</label>
+                <select name="type" class="form-control">
+                    <option value="Positive">Positive</option>
+                    <option value="Negative">Negative</option>
+                </select>
+            </div>
+            <button class="btn">Add transactions</button>
+        </form>
+   
+</div>
+
+{% endblock %}
